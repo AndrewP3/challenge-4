@@ -14,7 +14,7 @@ body {
     background: cadetblue;
 }
 
-.start_btn.
+.start_btn,
 .info_box,
 .quiz_box,
 .result_box {
@@ -164,3 +164,72 @@ body {
     background: cadetblue;
 }
 /* QUIZ BOX STYLES END */
+
+/* SECTION STYLES START */
+section {
+    padding: 25px 30px 20px 30px;
+    background: white;
+}
+
+section .que_text {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+section .option_list {
+    padding: 20px 0px;
+    display: block;
+}
+
+section .option_list .option {
+    background: aqua;
+    border: lightskyblue;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom:15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .option_list .option:last-child {
+    margin-bottom: 0px;
+}
+
+section .option_list .option:hover {
+    color: lightseagreen;
+    background: white;
+    border: 1px solid lightblue;
+}
+
+section .option_list .option.correct {
+    color: green;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option_list .option.incorrect {
+    color: red;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+section .option_list .option.disabled {
+    pointer-events: none;
+}
+
+section .option_list .option .icon {
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    line-height: 24px;
+}
+/* SECTION STYLES END */
