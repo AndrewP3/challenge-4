@@ -99,5 +99,52 @@ function showQuestions(index) {
     + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
-    
+    que_text.innerHTML = que_tag;
+    optionList.innerHTML = option_tag;
+
+    const option = optionList.querySelector(".option");
+
+    // Set onclick attribute to all available options
+    for (i=0; i < option.length; i++) {
+        option[i].setAttribute("onclick", "optionsSelected");
+    }
 }
+
+// Creating the new div tags which for icons
+let tickIcontag = '<div class="icon tick"><i class="fas fa check"></i></div>';
+let crossIconTag = '<div class="icon cross"><i class="fas fa-times></i></div>';
+
+// If user clicked an option
+function optionsSelected(answer) {
+    clearInterval(counter);
+    clearInterval(counterLine);
+    let userAns = answer.textContent;
+    let correctAns = questions[que_count].answer;
+    const allOptions = optionList.children.length;
+
+    if (userAns == correctAns) {
+        userScore += 1;
+        answer.classList.add("correct");
+        answer.insertAdjacentHTML("beforeend", tickIcontag);
+        console.log("Correct Answer");
+        console.log("Your correct answers = " + userScore);
+    }
+    else {
+        answer.classList.add("incorrect");
+        answer.insertAdjacentHTML("beforeend", crossIconTag);
+        console.log("Wrong Answer");
+
+        for (i=0; i < allOptions; i++) {
+            if (optionList.childrem[i].textContent == correctAns) {
+                optionList.children[i].setAttribute("class", "option correct");
+                optionList.children[i].insertAdjacentHTML("beforeend", tickIcontag);
+                console.log("Auto seleced correct answer.")
+            }
+        }
+    }
+    for (i=0; i < allOptions; i++) {
+        optionList.children[i].classList.add("disabled");
+    }
+    nextBtn.classList.add("show");
+} 
+
