@@ -106,6 +106,61 @@ body {
 }
 
 .quiz_box header {
-    
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: white;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.quiz_box header .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quiz_box header .timer {
+    color: cornflowerblue;
+    background: darkslategrey;
+    border: mediumturquoise;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px; 
+}
+
+.quiz_box header .timer .time_left_txt {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quiz_box header .timer .timer_sec {
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width:45px;
+    color: white;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: grey;
+    border: 1px solid grey;
+    user-select: none; 
+}
+
+.quiz_box header .time_line {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: cadetblue;
 }
 /* QUIZ BOX STYLES END */
